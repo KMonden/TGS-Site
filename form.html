@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問い合わせフォーム</title>
+    <script>
+        function validateForm() {
+            // 入力チェックを行う 
+            
+            
+            if(
+                document.getElementById("company").value
+                &&document.getElementById("department").value
+                &&document.getElementById("job").value
+                &&document.getElementById("name").value
+                &&document.getElementById("email").value
+                &&document.getElementById("tel").value
+                &&document.getElementById("title").value
+                &&document.getElementById("content").value
+                )
+            {
+                
+
+                // 入力内容の確認
+                if(window.confirm(
+                    "以下の内容で登録しますか？"
+                    +"\n企業名："+document.getElementById("company").value
+                    +"\n部署名："+document.getElementById("department").value
+                    +"\n役職名："+document.getElementById("job").value
+                    +"\n名前："+document.getElementById("name").value
+                    +"\nEメール："+document.getElementById("email").value
+                    +"\n電話番号："+document.getElementById("tel").value
+                    +"\n件名："+document.getElementById("title").value
+                    +"\n内容：\n"+document.getElementById("content").value
+                ))
+                         {
+                            return true;
+                         }
+                         else
+                         {
+                            return false;
+                         }
+            }
+            else
+            {
+                alert("入力に不備があります");
+                return false;
+            }
+        }
+            
+    </script>
+</head>
+<body>
+    <h1>問い合わせフォーム</h1>
+    <form method="POST" action="form.php" onsubmit="return validateForm()">
+
+        <label for="company">企業名:</label>
+        <br>
+        <input type="text" id="company" name="company">
+        <br>
+
+        <label for="department">部署名:</label>
+        <br>
+        <input type="text" id="department" name="department">
+        <br>
+
+        <label for="job">役職名:</label>
+        <br>
+        <input type="text" id="job" name="job">
+        <br>
+
+        <label for="name">名前:</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br>
+
+        <label for="email">メールアドレス:</label>
+        <br>
+        <input type="email" id="email" name="email">
+        <br>
+
+        <label for="tel">電話番号:</label>
+        <br>
+        <input type="tel" id="tel" name="tel">
+        <br>
+
+        <label for="title">件名:</label>
+        <br>
+        <input type="text" id="title" name="title">
+        <br>
+
+        <label for="content">問い合わせ内容:</label>
+        <br>
+        <textarea name="content" id="content" rows="4" cols="40"></textarea>
+        <br>
+        <input type="submit" value="登録">
+    </form>
+</body>
+</html>

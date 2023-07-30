@@ -1,0 +1,26 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ 
+.child {
+ color: royalblue;
+ border: solid 1px #fff;
+ text-align: center;
+ line-height: 100px;
+ width: 200px;
+ height: 60px;
+}
+
+.homeLink{
+    text-align: center;
+    padding-top: 5em;
+}
+
+.link{
+    text-align: center;
+    line-height: 60px;
+    width: 100px;
+    height: 60px;
+}
